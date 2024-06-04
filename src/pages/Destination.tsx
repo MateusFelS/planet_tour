@@ -7,6 +7,7 @@ import CostaRica from '../assets/images/paises/costa_rica.jpeg';
 import Portugal from '../assets/images/paises/portugal.jpeg';
 import Australia from '../assets/images/paises/australia.jpeg';
 import Mexico from '../assets/images/paises/mexico.jpeg';
+import { Link } from 'react-router-dom';
 
 const Destination = () => {
     const [destinos] = useState([
@@ -26,10 +27,10 @@ const Destination = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center p-4">
                 {destinos.map(destino => (
                     <div key={destino.id} className="max-w-[400px] w-full bg-red-400 p-2 rounded-lg shadow-lg cursor-pointer hover:scale-110 ease-in duration-300">
-                        <a href={`/country/${destino.id}`}>
+                        <Link to={`/country/${destino.id}`}>
                             <img src={destino.imagem} className="h-48 w-full object-cover rounded" alt={destino.nome} />
                             <h3 className="flex justify-center sm:text-2xl text-1xl p-2 font-bold text-white">{destino.nome}</h3>
-                        </a>
+                        </Link>
                     </div>
                 ))}
             </div>

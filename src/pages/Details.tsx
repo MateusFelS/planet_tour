@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Brasil from '../assets/images/paises/brasil.jpeg';
 import Italia from '../assets/images/paises/italia.jpeg';
 import Grecia from '../assets/images/paises/grecia.jpeg';
@@ -22,7 +22,6 @@ interface CountryDetails {
 
 const CountryDetails: React.FC = () => {
   const { countryId } = useParams<{ countryId: string }>();
-  const [modalOpen, setModalOpen] = useState(true);
 
   const loadCountryDetails = (id: string): CountryDetails | null => {
     switch (id) {
@@ -93,70 +92,72 @@ const CountryDetails: React.FC = () => {
           image: Portugal
         };
       case '7':
-          return {
-            name: 'Austrália',
-            capital: 'Camberra',
-            population: '25.4 milhões',
-            language: 'Inglês',
-            currency: 'Dólar australiano (AUD)',
-            landmarks: ['Opera House', 'Grande Barreira de Coral', 'Uluru'],
-            cuisine: ['Vegemite', 'Meat Pie', 'Fish and Chips'],
-            image: Australia
-          };
+        return {
+          name: 'Austrália',
+          capital: 'Camberra',
+          population: '25.4 milhões',
+          language: 'Inglês',
+          currency: 'Dólar australiano (AUD)',
+          landmarks: ['Opera House', 'Grande Barreira de Coral', 'Uluru'],
+          cuisine: ['Vegemite', 'Meat Pie', 'Fish and Chips'],
+          image: Australia
+        };
       case '8':
-          return {
-            name: 'México',
-            capital: 'Cidade do México',
-            population: '126.2 milhões',
-            language: 'Espanhol',
-            currency: 'Peso mexicano (MXN)',
-            landmarks: ['Chichén Itzá', 'Cancún', 'Cidade do México'],
-            cuisine: ['Tacos', 'Chilaquiles', 'Guacamole'],
-            image: Mexico
-          };
+        return {
+          name: 'México',
+          capital: 'Cidade do México',
+          population: '126.2 milhões',
+          language: 'Espanhol',
+          currency: 'Peso mexicano (MXN)',
+          landmarks: ['Chichén Itzá', 'Cancún', 'Cidade do México'],
+          cuisine: ['Tacos', 'Chilaquiles', 'Guacamole'],
+          image: Mexico
+        };
       default:
-          return null;
-      }
+        return null;
     }
-  
+  };
 
   const countryDetails = loadCountryDetails(countryId!);
 
   if (!countryDetails) {
-    return <div>País não encontrado</div>;
+    return <div className="text-center text-2xl mt-20">País não encontrado</div>;
   }
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  
   return (
-    modalOpen && (
-      <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75">
-        <div className="max-w-lg p-8 bg-white rounded shadow-md">
-          <button className="relative left-full text-2xl font-bold text-red-600" onClick={closeModal}>x</button>
-          <h2 className="text-3xl font-bold mb-4">Detalhes de {countryDetails.name}</h2>
-          <img className="h-48 w-full object-cover rounded border-solid border-black border-4" src={countryDetails.image} />
-          <p className="pt-4 font-bold">Capital: {countryDetails.capital}</p>
-          <p className="font-bold">População: {countryDetails.population}</p>
-          <p className="font-bold">Língua: {countryDetails.language}</p>
-          <p className="font-bold">Moeda: {countryDetails.currency}</p>
-          <h3 className="mt-4 mb-2 font-bold">Principais Pontos Turísticos:</h3>
-          <ul className="list-disc pl-6">
-            {countryDetails.landmarks.map((landmark, index) => (
-              <li key={`landmark-${index}`}>{landmark}</li>
-            ))}
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8">
+      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl">
+        <Link to="/" className="sm:text-2xl text-xl font-bold hover:underline mb-4 inline-block">&larr; Voltar</Link>
+        <h2 className="text-4xl font-bold mb-4 text-center">{countryDetails.name}</h2>
+        <div className="flex justify-center mb-8">
+          <img className="h-64 sm:h-80 w-full object-cover rounded-lg border-solid border-black border-2" src={countryDetails.image} alt={countryDetails.name} />
+        </div>
+        <div className="space-y-4">
+          <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+            <li><strong>Capital:</strong> {countryDetails.capital}</li>
+            <li><strong>População:</strong> {countryDetails.population}</li>
+            <li><strong>Língua:</strong> {countryDetails.language}</li>
+            <li><strong>Moeda:</strong> {countryDetails.currency}</li>
           </ul>
-          <h3 className="mt-4 mb-2 font-bold">Culinária Típica:</h3>
-          <ul className="list-disc pl-6">
-            {countryDetails.cuisine.map((dish, index) => (
-              <li key={`dish-${index}`}>{dish}</li>
-            ))}
-          </ul>
+          <div>
+            <h3 className="text-2xl mt-6 mb-2 font-bold">Principais Pontos Turísticos:</h3>
+            <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+              {countryDetails.landmarks.map((landmark, index) => (
+                <li key={`landmark-${index}`}>{landmark}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-2xl mt-6 mb-2 font-bold">Culinária Típica:</h3>
+            <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+              {countryDetails.cuisine.map((dish, index) => (
+                <li key={`dish-${index}`}>{dish}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    )
+    </div>
   );
 };
 
