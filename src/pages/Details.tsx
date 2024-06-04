@@ -17,6 +17,8 @@ interface CountryDetails {
   currency: string;
   landmarks: string[];
   cuisine: string[];
+  preco: string;
+  duracao: string;
   image: string;
 }
 
@@ -34,6 +36,8 @@ const CountryDetails: React.FC = () => {
           currency: 'Real (BRL)',
           landmarks: ['Cristo Redentor', 'Pão de Açúcar', 'Cataratas do Iguaçu'],
           cuisine: ['Feijoada', 'Churrasco', 'Açaí'],
+          preco: 'R$ 4.500,00',
+          duracao: '7 dias',
           image: Brasil,
         };
       case '2':
@@ -45,6 +49,8 @@ const CountryDetails: React.FC = () => {
           currency: 'Euro (EUR)',
           landmarks: ['Coliseu', 'Torre de Pisa', 'Canais de Veneza'],
           cuisine: ['Pizza', 'Pasta', 'Gelato'],
+          preco: '€ 3.000,00',
+          duracao: '10 dias',
           image: Italia
         };
       case '3':
@@ -56,6 +62,8 @@ const CountryDetails: React.FC = () => {
           currency: 'Euro (EUR)',
           landmarks: ['Acrópole de Atenas', 'Santorini', 'Meteora'],
           cuisine: ['Moussaka', 'Souvlaki', 'Gyro'],
+          preco: '€ 2.800,00',
+          duracao: '8 dias',
           image: Grecia
         };
       case '4':
@@ -67,6 +75,8 @@ const CountryDetails: React.FC = () => {
           currency: 'Baht tailandês (THB)',
           landmarks: ['Bangkok', 'Chiang Mai', 'Phuket'],
           cuisine: ['Pad Thai', 'Tom Yum Goong', 'Green Curry'],
+          preco: '$ 2.200,00',
+          duracao: '12 dias',
           image: Tailandia
         };
       case '5':
@@ -78,6 +88,8 @@ const CountryDetails: React.FC = () => {
           currency: 'Colón (CRC)',
           landmarks: ['Parque Nacional Manuel Antonio', 'Vulcão Arenal', 'Reserva Biológica Bosque Nuboso Monteverde'],
           cuisine: ['Gallo Pinto', 'Casado', 'Ceviche'],
+          preco: '$ 1.800,00',
+          duracao: '9 dias',
           image: CostaRica
         };
       case '6':
@@ -89,6 +101,8 @@ const CountryDetails: React.FC = () => {
           currency: 'Euro (EUR)',
           landmarks: ['Torre de Belém', 'Mosteiro dos Jerónimos', 'Castelo de São Jorge'],
           cuisine: ['Bacalhau', 'Pastel de Nata', 'Vinho do Porto'],
+          preco: '€ 2.500,00',
+          duracao: '7 dias',
           image: Portugal
         };
       case '7':
@@ -100,6 +114,8 @@ const CountryDetails: React.FC = () => {
           currency: 'Dólar australiano (AUD)',
           landmarks: ['Opera House', 'Grande Barreira de Coral', 'Uluru'],
           cuisine: ['Vegemite', 'Meat Pie', 'Fish and Chips'],
+          preco: 'AUD 5.000,00',
+          duracao: '15 dias',
           image: Australia
         };
       case '8':
@@ -111,6 +127,8 @@ const CountryDetails: React.FC = () => {
           currency: 'Peso mexicano (MXN)',
           landmarks: ['Chichén Itzá', 'Cancún', 'Cidade do México'],
           cuisine: ['Tacos', 'Chilaquiles', 'Guacamole'],
+          preco: '$ 2.000,00',
+          duracao: '10 dias',
           image: Mexico
         };
       default:
@@ -132,13 +150,23 @@ const CountryDetails: React.FC = () => {
         <div className="flex justify-center mb-8">
           <img className="h-64 sm:h-80 w-full object-cover rounded-lg border-solid border-gray-800 border-2" src={countryDetails.image} alt={countryDetails.name} />
         </div>
-        <div className="space-y-4">
-          <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
-            <li><strong>Capital:</strong> {countryDetails.capital}</li>
-            <li><strong>População:</strong> {countryDetails.population}</li>
-            <li><strong>Língua:</strong> {countryDetails.language}</li>
-            <li><strong>Moeda:</strong> {countryDetails.currency}</li>
-          </ul>
+        <div className="grid sm:grid-cols-2 pb-4">
+          <div>
+            <h3 className="text-2xl mt-6 mb-2 font-bold">Principais Pontos Turísticos:</h3>
+            <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+              <li><strong>Capital:</strong> {countryDetails.capital}</li>
+              <li><strong>População:</strong> {countryDetails.population}</li>
+              <li><strong>Língua:</strong> {countryDetails.language}</li>
+              <li><strong>Moeda:</strong> {countryDetails.currency}</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-2xl mt-6 mb-2 font-bold">Informações do Pacote:</h3>
+            <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+              <li><strong className="font-bold">Preço:</strong> {countryDetails.preco}</li>
+              <li><strong className="font-bold">Duração:</strong> {countryDetails.duracao}</li>
+            </ul>
+          </div>
           <div>
             <h3 className="text-2xl mt-6 mb-2 font-bold">Principais Pontos Turísticos:</h3>
             <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
@@ -156,6 +184,11 @@ const CountryDetails: React.FC = () => {
             </ul>
           </div>
         </div>
+        <Link to={`/checkout/${countryId}`}>
+            <button className="w-full bg-gray-500 text-white font-bold py-2 rounded-md hover:bg-gray-800 transition duration-300" type="submit">
+              Avançar
+            </button>
+          </Link>
       </div>
     </div>
   );
