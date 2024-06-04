@@ -1,7 +1,7 @@
 # React + TypeScript + Vite + Windtail
 
 # 🛫🧳 Planet Tour - Site Fictício de Turismo
-### O StyleSphere é um site fictício de turismo com o intuito de estudo de React + Windtail
+### O Planet Tour é um site fictício de turismo com o intuito de estudo de React + Windtail
  
 ## 💻 Web Site
 ### Link: https://planet-tour.vercel.app/
