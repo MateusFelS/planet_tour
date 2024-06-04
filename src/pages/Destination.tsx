@@ -51,7 +51,7 @@ const Carrossel = () => {
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {destinos.map((destino) => (
-              <div key={destino.id} className="min-w-full flex-shrink-0 p-4">
+              <div key={destino.id} className="w-full flex-shrink-0 p-4">
                 <div className="max-w-[400px] w-full bg-white p-4 rounded-lg shadow-lg cursor-pointer hover:scale-105 transform transition duration-300 mx-auto">
                   <Link to={`/country/${destino.id}`}>
                     <img src={destino.imagem} className="sm:h-48 h-32 w-full object-cover rounded" alt={destino.nome} />

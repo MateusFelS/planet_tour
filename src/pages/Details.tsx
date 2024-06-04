@@ -152,8 +152,8 @@ const CountryDetails: React.FC = () => {
         </div>
         <div className="grid sm:grid-cols-2 pb-4">
           <div>
-            <h3 className="text-2xl mt-6 mb-2 font-bold">Principais Pontos Turísticos:</h3>
-            <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+            <h3 className="sm:text-2xl text-1xl mt-4 mb-2 font-bold">Principais Pontos Turísticos:</h3>
+            <ul className="list-disc pl-6 sm:text-lg text-1xl space-y-2">
               <li><strong>Capital:</strong> {countryDetails.capital}</li>
               <li><strong>População:</strong> {countryDetails.population}</li>
               <li><strong>Língua:</strong> {countryDetails.language}</li>
@@ -161,23 +161,23 @@ const CountryDetails: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-2xl mt-6 mb-2 font-bold">Informações do Pacote:</h3>
-            <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+            <h3 className="sm:text-2xl text-1xl mt-4 mb-2 font-bold">Informações do Pacote:</h3>
+            <ul className="list-disc pl-6 sm:text-lg text-1xl space-y-2">
               <li><strong className="font-bold">Preço:</strong> {countryDetails.preco}</li>
               <li><strong className="font-bold">Duração:</strong> {countryDetails.duracao}</li>
             </ul>
           </div>
           <div>
-            <h3 className="text-2xl mt-6 mb-2 font-bold">Principais Pontos Turísticos:</h3>
-            <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+            <h3 className="sm:text-2xl text-1xl mt-4 mb-2 font-bold">Principais Pontos Turísticos:</h3>
+            <ul className="list-disc pl-6 sm:text-lg text-1xl space-y-2">
               {countryDetails.landmarks.map((landmark, index) => (
                 <li key={`landmark-${index}`}>{landmark}</li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-2xl mt-6 mb-2 font-bold">Culinária Típica:</h3>
-            <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">
+            <h3 className="sm:text-2xl text-1xl mt-4 mb-2 font-bold">Culinária Típica:</h3>
+            <ul className="list-disc pl-6 sm:text-lg text-1xl space-y-2">
               {countryDetails.cuisine.map((dish, index) => (
                 <li key={`dish-${index}`}>{dish}</li>
               ))}

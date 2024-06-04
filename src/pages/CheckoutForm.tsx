@@ -69,16 +69,14 @@ return (
         <h2 className="text-3xl font-bold mb-4 text-center">Pagamento via PIX</h2>
         <div className="flex flex-col items-center">
             <img src={Logo} className="p-4 max-w-40 max-h-32"/>
-            <p className="text-2xl font-semibold pt-4"><strong>Preço:</strong> {countryDetails.preco}</p>
-            <p className="text-2xl font-semibold pt-4"><strong>Chave PIX:</strong> 123.456.789-00</p>
+            <h2 className="text-1xl font-semibold pt-4"><strong>Preço:</strong> {countryDetails.preco}</h2>
+            <h2 className="text-1xl font-semibold pt-4"><strong>Chave PIX:</strong> 123.456.789-00</h2>
         </div>
         <h3 className="text-gray-800 text-center pt-4">(Obs: Após o pagamento, <strong>entre em contato</strong> para confirmar a reserva.)</h3>
-        <div className="flex flex-row p-4 space-x-2 justify-center">
-          <Link to={"https://wa.me/5512995633227"}>
-            <FaWhatsapp size={30} color="green" className="cursor-pointer hover:scale-125 ease-in duration-300"/>
-          </Link>
-          <h3 className="text-gray-800 text-center font-bold">(WhatsApp: (12)99563-3227)</h3>
-        </div>
+        <Link className="flex flex-row p-4 items-center justify-center cursor-pointer hover:scale-125 ease-in duration-300" to={"https://wa.me/5512995633227"}>
+          <FaWhatsapp size={30} color="green"/>
+          <h3 className="text-gray-800 text-center font-bold">WhatsApp: (12)99563-3227</h3>
+        </Link>
         <Link to="/">
           <button type="submit" className="w-full bg-gray-500 text-white font-bold py-2 rounded-md hover:bg-gray-800 transition duration-300">
             Voltar ao Início
