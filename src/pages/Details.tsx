@@ -125,12 +125,12 @@ const CountryDetails: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8 text-gray-800">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl">
-        <Link to="/" className="sm:text-2xl text-xl font-bold hover:underline mb-4 inline-block">&larr; Voltar</Link>
+        <Link to="/" className="sm:text-2xl text-1xl font-bold hover:underline mb-4 inline-block">&larr;Voltar</Link>
         <h2 className="text-4xl font-bold mb-4 text-center">{countryDetails.name}</h2>
         <div className="flex justify-center mb-8">
-          <img className="h-64 sm:h-80 w-full object-cover rounded-lg border-solid border-black border-2" src={countryDetails.image} alt={countryDetails.name} />
+          <img className="h-64 sm:h-80 w-full object-cover rounded-lg border-solid border-gray-800 border-2" src={countryDetails.image} alt={countryDetails.name} />
         </div>
         <div className="space-y-4">
           <ul className="list-disc pl-6 sm:text-xl text-lg space-y-2">

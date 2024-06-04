@@ -24,11 +24,11 @@ const Destination = () => {
     return (
         <div id="destinos" className="relative w-full h-fit pb-10 text-center">
             <h1 className="sm:text-5xl text-4xl font-bold text-gray-800 p-10">Destinos</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center p-4">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center p-4">
                 {destinos.map(destino => (
                     <div key={destino.id} className="max-w-[400px] w-full bg-red-400 p-2 rounded-lg shadow-lg cursor-pointer hover:scale-110 ease-in duration-300">
                         <Link to={`/country/${destino.id}`}>
-                            <img src={destino.imagem} className="h-48 w-full object-cover rounded" alt={destino.nome} />
+                            <img src={destino.imagem} className="md:h-48 h-36 md:w-full object-cover rounded" alt={destino.nome} />
                             <h3 className="flex justify-center sm:text-2xl text-1xl p-2 font-bold text-white">{destino.nome}</h3>
                         </Link>
                     </div>
