@@ -1,4 +1,3 @@
-import React from 'react';
 import Main from "./pages/Main";
 import Slidenav from "./components/Slidenav";
 import Destination from "./pages/Destination";
@@ -9,10 +8,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CountryDetails from "./pages/Details";
 import Footer from "./components/Footer";
 import Checkout from "./pages/CheckoutForm";
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-
-const stripePromise = loadStripe('your-publishable-key-here');
 
 function App() {
   return (
@@ -34,11 +29,7 @@ function App() {
             </>
           } />
           <Route path="/country/:countryId" element={<CountryDetails />} />
-          <Route path="/checkout/:countryId" element={
-            <Elements stripe={stripePromise}>
-              <Checkout />
-            </Elements>
-          } />
+          <Route path="/checkout/:countryId" element={<Checkout />} />
         </Routes>
       </div>
     </Router>
