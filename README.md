@@ -1,5 +1,3 @@
-# React + TypeScript + Vite + Windtail
-
 # 🛫🧳 Planet Tour - Site Fictício de Turismo
 ### O Planet Tour é um site fictício de turismo com o intuito de estudo de React + Windtail
  
