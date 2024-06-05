@@ -32,7 +32,7 @@ const Carrossel = () => {
   };
 
   return (
-    <div className="w-full bg-gray-100 p-8">
+    <div id="destinos" className="w-full bg-gray-100 p-8">
       <h2 className="text-4xl font-bold text-center mb-8">Destinos</h2>
       <div className="relative w-full max-w-[1200px] mx-auto">
          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
