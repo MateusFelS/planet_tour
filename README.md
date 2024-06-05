@@ -1,5 +1,5 @@
 # 🛫🧳 Planet Tour - Site Fictício de Turismo
-### O Planet Tour é um site fictício de turismo com o intuito de estudo de React + Windtail
+### O Planet Tour é um site fictício de turismo com o intuito de estudo de React + Tailwind
  
 ## 💻 Web Site
 ### Link: https://planet-tour.vercel.app/
@@ -7,7 +7,7 @@
 ### **Technologias usadas**
 ### • React: Framework
 ### • TypeScript: Linguagem de Programação
-### • Windtail: Biblioteca de Estilo
+### • Tailwind: Biblioteca de Estilo
 
 
 ## 📌 Versão
